@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+header {
+    text-align: center;
+}
+
+h1 {
+    color: #000000;
+    
+}
+
+a:link , a:visited {
+    text-decoration: none;
+}
