@@ -5,7 +5,7 @@
 <!-- 바퀴달린집 text logo -->
 <header>
 	<div>
-		<a href="#"><h1>바퀴달린집</h1></a>
+		<a href="main.jsp"><h1>바퀴달린집</h1></a>
 	</div>
 </header>
 
@@ -38,7 +38,7 @@
 
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">로그인</a></li>
-        <li><a href="#">회원가입</a></li>
+        <li><a href="join.jsp">회원가입</a></li>
 
         </li>
       </ul>

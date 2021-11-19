@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<!--  main : 홈페이지 접속 시 보이는 화면 -->
+<!-- 회원가입 페이지 -->
 
 <!-- head -->
 <head>
@@ -20,7 +20,7 @@
 	<jsp:include page="nav.jsp" />
 
 
-	<!-- 회원가입 서식 -->
+	<!-- 회원가입 시작 -->
 
 	<div class="container">
 		<div class="col-lg-4"></div>
@@ -29,17 +29,14 @@
 				<form method="post" action="joinAction.jsp">
 					<h3 style="text-align: center;">회원가입</h3>
 					<div class="form-group">
-
-						<input type="text" class="form-control" placeholder="아이디" name="userID" maxlength="20" />
-
+						<input type="email" class="form-control" placeholder="아이디" name="userID" maxlength="100" />
+					</div>
+					<div class="form-group">
+						<input type="password" class="form-control" placeholder="비밀번호" name="userPW" maxlength="20" />
 					</div>
 
 					<div class="form-group">
-						<input type="password" class="form-control" placeholder="비밀번호" name="userPassword" maxlength="20" />
-					</div>
-
-					<div class="form-group">
-						<input type="password" class="form-control" placeholder="비밀번호 재확인" name="userPassword" maxlength="20" />
+						<input type="password" class="form-control" placeholder="비밀번호 재확인" name="userPW" maxlength="20" />
 					</div>
 
 					<div class="form-group">
@@ -48,17 +45,22 @@
 					</div>
 
 					<div class="form-group">
-						<input type="email" class="form-control" placeholder="이메일" name="userEmail" maxlength="20" />
+						<input type="text" class="form-control" placeholder="전화번호" name="userPhone" maxlength="15" />
 					</div>
 					<input type="submit" class="btn btn-primary form-control" value="회원가입" />
-
 				</form>
+				
+				<input type="hidden" class="btn btn-primary form-control" name="userType" value="0">
+				<input type="hidden" class="btn btn-primary form-control" name="userWithdraw" value="0">
+				<input type="hidden" class="btn btn-primary form-control" name="userMarketSelect" value="0">
 
 			</div>
 		</div>
 		<div class="col-lg-4"></div>
 
 	</div>
+
+	<!-- 회원가입 끝 -->
 
 
 
