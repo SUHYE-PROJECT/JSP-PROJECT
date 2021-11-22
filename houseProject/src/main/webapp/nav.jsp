@@ -30,7 +30,7 @@
         <li><a href="#">런닝맨 소개</a></li>
         <li><a href="#">출연자 소개</a></li>
         <li><a href="#">공지사항</a></li>
-        <li><a href="#">시청자 게시판</a></li>
+        <li><a href="bbs.jsp">시청자 게시판</a></li>
         <li class="dropdown">
 
         </li>
