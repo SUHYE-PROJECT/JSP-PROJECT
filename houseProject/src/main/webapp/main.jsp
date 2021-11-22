@@ -10,7 +10,7 @@
 <meta name="viewport" content="width=device-width" , initial-scale="1">
 <%@ include file="/commonIncludeTop.jsp"%>
 
-<title>바퀴달린집 홈페이지</title>
+<title>런닝맨 홈페이지</title>
 </head>
 
 <!-- body -->
@@ -19,7 +19,8 @@
 	<!-- 내비게이션 -->
 	<jsp:include page="nav.jsp" />
 
-	<!-- 캐러솔 시작 : https://getbootstrap.com/docs/4.0/components/carousel/ -->
+	<!-- 캐러솔 시작 : https://getbootstrap.com/docs/4.0/components/carousel/
+	     사진 사이즈: 1920*530 -->
 	<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="5200">
 		<!-- Wrapper for slides -->
 		<div class="carousel-inner" role="listbox">
@@ -52,20 +53,15 @@
 			<div class="row">
 				<div class="col-xs-6">
 					<!-- 유튜브 동영상 : https://www.youtube.com/watch?v=bpxccawKtZs&t=1s -->
-					<iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/bpxccawKtZs" title="YouTube video player" frameborder="0"
-						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/txqRDKOGD_g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				</div>
 
 				<!--  출연자 소개 -->
 				<div class="col-sm-6 col-md-4">
 					<div class="thumbnail">
 						<img src="imgs/3.jpg" alt="...">
-						<div class="caption">
-							<h3>Thumbnail label</h3>
-							<p>...</p>
-							<p>
-								<a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a>
-							</p>
+						<div class="caption">							
+							<a href="main.jsp"><h3>출연자 소개</h3></a>
 						</div>
 					</div>
 				</div>

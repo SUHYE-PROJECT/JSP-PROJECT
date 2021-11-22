@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <!-- viewport : 화면 상의 화상 표시 영역 -->
 <meta name="viewport" content="width=device-width" , initial-scale="1">
-<title>바퀴달린집 홈페이지</title>
+<title>런닝맨 홈페이지</title>
 </head>
 
 <!-- body -->
