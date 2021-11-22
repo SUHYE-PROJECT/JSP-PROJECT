@@ -50,19 +50,13 @@
 					
 
 					
-				<input type="hidden" name="userType" value="">
-                <input type="hidden" name="userWithdraw" value="">
+				<input type="hidden" name="userType" value="1">
+                <input type="hidden" name="userWithdraw" value="1">
                 <input type="hidden" name="userMarketSelect" value="">
 					<input type="submit" class="btn btn-primary form-control" value="회원가입" />
-
 				</form>
-
-
-
-
 			</div>
-		</div>
-		<div class="col-lg-4"></div>
+		</div>		<div class="col-lg-4"></div>
 
 	</div>
 
