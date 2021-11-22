@@ -25,7 +25,7 @@
 		<!-- Wrapper for slides -->
 		<div class="carousel-inner" role="listbox">
 			<div class="item active">
-				<img src="imgs/1.jpg" alt="...">
+				<img src="imgs/3.jpg" alt="...">
 				<div class="carousel-caption"></div>
 			</div>
 
@@ -33,6 +33,11 @@
 				<img src="imgs/2.jpg" alt="...">
 				<div class="carousel-caption"></div>
 			</div>
+			
+			         <div class="item">
+                <img src="imgs/1.jpg" alt="...">
+                <div class="carousel-caption"></div>
+            </div>
 
 			<!-- Left and right controls -->
 			<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"
@@ -57,11 +62,11 @@
 				</div>
 
 				<!--  출연자 소개 -->
-				<div class="col-sm-6 col-md-4">
+				<div class="col-sm-6 col-md-5">
 					<div class="thumbnail">
-						<img src="imgs/3.jpg" alt="...">
+						<img src="imgs/4.jpg" alt="...">
 						<div class="caption">							
-							<a href="main.jsp"><h3>출연자 소개</h3></a>
+							<a href="runGuest.jsp"><h4>출연자 소개</h4></a>
 						</div>
 					</div>
 				</div>

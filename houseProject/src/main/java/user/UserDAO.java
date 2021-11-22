@@ -56,7 +56,6 @@ public class UserDAO {
             pstmt.setInt(6, user.getUserWithdraw()); // 전화번호
             pstmt.setInt(7, user.getUserMarketSelect()); // 전화번호
 
-
             return pstmt.executeUpdate(); // SELECT빼고 모든 쿼리실행
         } catch (Exception e) {
             e.printStackTrace();
