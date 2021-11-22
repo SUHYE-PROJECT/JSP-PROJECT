@@ -23,19 +23,19 @@
 <body>
 <%@ include file="session.jsp" %><!-- 정적포함 -->
 <%
-    int bbsID = 0;
-    int commentID = 0;
-    if(request.getParameter("bbsID")!=null){   //request에 bbsID가 없다면
-        bbsID = Integer.parseInt(request.getParameter("bbsID"));   //다시 받아오도록
+    int boardID = 0;
+    int comNum = 0;
+    if(request.getParameter("boardID")!=null){   //request에 bbsID가 없다면
+        boardID = Integer.parseInt(request.getParameter("boardID"));   //다시 받아오도록
     }
-    if(bbsID == 0){    //그래도 못받아왔으면 경고주고 글목록으로 이동
+    if(boardID == 0){    //그래도 못받아왔으면 경고주고 글목록으로 이동
         PrintWriter script = response.getWriter();
         script.println("<script>");
         script.println("alert('유효하지 않은 글입니다.')");  
         script.println("location.href = 'bbs.jsp'");  
         script.println("</script>");
     }
-    Bbs bbs = new BbsDAO().getBbs(bbsID);  //해당 글데이터 받아오기
+    Bbs bbs = new BbsDAO().getBbs(boardID);  //해당 글데이터 받아오기
 
 %>
 
@@ -55,20 +55,20 @@
                
                    <tr>
                        <td style="width:20%">글 제목</td>
-                       <td colspan="2"><%=bbs.getBbsTitle().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>") %></td>
+                       <td colspan="2"><%=bbs.getBoardTitle().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>") %></td>
                        <!-- 특수문자나 공백, 줄띄움 처리 --> 
                    </tr>
                    <tr>
                        <td>작성자</td>
-                       <td colspan="2"><%= bbs.getUserID() %></td>
+                       <td colspan="2"><%= bbs.getCreaterID() %></td>
                    </tr>
                    <tr>
                        <td>작성일자</td>
-                       <td colspan="2"><%= bbs.getBbsDate().substring(0,11) + " " + bbs.getBbsDate().substring(11,13)+"시 " + bbs.getBbsDate().substring(14,16) + "분"%></td>
+                       <td colspan="2"><%= bbs.getCreateDate().substring(0,11) + " " + bbs.getCreateDate().substring(11,13)+"시 " + bbs.getCreateDate().substring(14,16) + "분"%></td>
                    </tr>
                    <tr>
                        <td>내용</td>
-                       <td colspan="2" style="min-height:200px; text-align:left;"><%=bbs.getBbsContent().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>") %></td>
+                       <td colspan="2" style="min-height:200px; text-align:left;"><%=bbs.getBoardContent().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>") %></td>
                        <!-- 특수문자나 공백, 줄띄움 처리 --> 
                    </tr>
                    <tr>
@@ -83,14 +83,14 @@
            </div>
            <!-- 작성자가 본인이라면 수정과 삭제가 가능하도록 -->
            <%
-               if(userID != null && userID.equals(bbs.getUserID())){
+               if(userID != null && userID.equals(bbs.getCreaterID())){
             %>
 
                    <div class="row-fluid">
-                        <a onclick="return confirm('정말로 삭제하시겠습니까?')" href="deleteAction.jsp?bbsID=<%= bbsID %>" class="btn btn-danger pull-right">삭제</a>
+                        <a onclick="return confirm('정말로 삭제하시겠습니까?')" href="deleteAction.jsp?boardID=<%= boardID %>" class="btn btn-danger pull-right">삭제</a>
                    </div>
                    <div class="row-fluid">
-                        <a href="update.jsp?bbsID=<%= bbsID %>" class="btn btn-success pull-right">수정</a>
+                        <a href="update.jsp?boardID=<%= boardID %>" class="btn btn-success pull-right">수정</a>
                    </div>
 
 
@@ -106,7 +106,7 @@
             <form method="post" action="commentAction.jsp" id="commentForm">
                 <!-- 댓글번호commentID는 dao에서 증가시킬거고, 글내용은 아래, 글작성자는 세션에서 -->
                 <input id="actionTypeInput" type="hidden" name = "type" value="create">
-                <input type="hidden" id="bbsID" name = "bbsID" value="<%=bbs.getBbsID() %>">
+                <input type="hidden" id="bbsID" name = "bbsID" value="<%=bbs.getBoardID() %>">
                 <input type="hidden" id="commentID" name = "commentID" value=0>
                 <table class="table table-striped" style="text-align: center; border: 2px solid #dddddd; height: 70px;">
                     <tr>
@@ -140,23 +140,23 @@
                <!-- 댓글 리스트 데이터 -->
                 <%
                    CommentDAO commentDAO = new CommentDAO();
-                   ArrayList<Comment> list = commentDAO.getList(bbs.getBbsID(),10);
+                   ArrayList<Comment> list = commentDAO.getList(bbs.getBoardID(),10);
                    for(int i=0; i<list.size(); i++){
                 %>
                 <!-- 작성자, 댓글내용, 댓글작성날짜, 수정버튼 ,삭제버튼 -->
                    <tr>
-                       <td class="col-md-2"><%= list.get(i).getUserID() %></td><!-- 작성자 -->
-                       <td class="col-md-7"><%= list.get(i).getCommentText() %></td><!-- 댓글내용 -->
-                       <td class="col-md-2"><%= list.get(i).getCommentDate() %></td><!-- 댓글작성날짜 -->
+                       <td class="col-md-2"><%= list.get(i).getCreaterID() %></td><!-- 작성자 -->
+                       <td class="col-md-7"><%= list.get(i).getCreatedCom() %></td><!-- 댓글내용 -->
+                       <td class="col-md-2"><%= list.get(i).getCreateDate() %></td><!-- 댓글작성날짜 -->
                        
                        <%
-                       if(userID.equals(list.get(i).getUserID())) { //댓글 작성자와 로그인유저가 같으면 수정,삭제 버튼 표시
+                       if(userID.equals(list.get(i).getCreaterID())) { //댓글 작성자와 로그인유저가 같으면 수정,삭제 버튼 표시
                        %>
                        <td class="col-md-1 ">
                             <!-- 댓글수정버튼 -->
-                            <img class="modifyBtn" src="images/yellow_modify.png" alt="" onclick="updateComment(<%= list.get(i).getBbsID()%>, <%= list.get(i).getCommentID()%>);"/>
+                            <img class="modifyBtn" src="images/yellow_modify.png" alt="" onclick="updateComment(<%= list.get(i).getBoardID()%>, <%= list.get(i).getComNum()%>);"/>
                             <!-- 댓글삭제버튼 -->
-                            <img class="minusBtn" src="images/red_minus.png" alt="" onclick="confirmDelete(<%= list.get(i).getBbsID()%>, <%= list.get(i).getCommentID()%>);"/>
+                            <img class="minusBtn" src="images/red_minus.png" alt="" onclick="confirmDelete(<%= list.get(i).getBoardID()%>, <%= list.get(i).getComNum()%>);"/>
                        </td>
                        
                        <%
