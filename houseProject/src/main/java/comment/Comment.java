@@ -7,7 +7,7 @@ public class Comment {
     private String createDate;
     private String createdCom;
     private String updaterID;
-    private String updaterDate;
+    private String updateDate;
 
     public int getComNum() {
         return comNum;
@@ -57,12 +57,12 @@ public class Comment {
         this.updaterID = updaterID;
     }
 
-    public String getUpdaterDate() {
-        return updaterDate;
+    public String getUpdateDate() {
+        return updateDate;
     }
 
-    public void setUpdaterDate(String updaterDate) {
-        this.updaterDate = updaterDate;
+    public void setUpdateDate(String updateDate) {
+        this.updateDate = updateDate;
     }
 
 }
