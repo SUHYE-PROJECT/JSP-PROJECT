@@ -47,12 +47,18 @@
 					<div class="form-group">
 						<input type="text" class="form-control" placeholder="전화번호" name="userPhone" maxlength="15" />
 					</div>
+					
+
+					
+				<input type="hidden" name="userType" value="">
+                <input type="hidden" name="userWithdraw" value="">
+                <input type="hidden" name="userMarketSelect" value="">
 					<input type="submit" class="btn btn-primary form-control" value="회원가입" />
+
 				</form>
-				
-				<input type="hidden" class="btn btn-primary form-control" name="userType" value="0">
-				<input type="hidden" class="btn btn-primary form-control" name="userWithdraw" value="0">
-				<input type="hidden" class="btn btn-primary form-control" name="userMarketSelect" value="0">
+
+
+
 
 			</div>
 		</div>

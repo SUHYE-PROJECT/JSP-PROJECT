@@ -37,7 +37,7 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">로그인</a></li>
+        <li><a href="login.jsp">로그인</a></li>
         <li><a href="join.jsp">회원가입</a></li>
 
         </li>

@@ -1,14 +1,14 @@
 package user;
 
 public class User {
-	private String userID;
-	private String userPW;
-	private String userName;
-	private String userPhone;
-	private int userType;
-	private int userWithdraw;
-	private int userMarketSelect;
-	
+    private String userID;
+    private String userPW;
+    private String userName;
+    private String userPhone;
+    private int userType;
+    private int userWithdraw;
+    private int userMarketSelect;
+    
     public String getUserID() {
         return userID;
     }
