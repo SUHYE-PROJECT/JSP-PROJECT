@@ -12,6 +12,7 @@
 
 <!-- 내비게이션 시작 -->
 <nav class="navbar navbar-default">
+<<<<<<< Updated upstream
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -64,6 +65,60 @@
 </nav>
 
 <%
+=======
+	<div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="main.jsp">Runningman♥</a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<!--  <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>-->
+				<li><a href="runInfor.jsp">런닝맨 소개</a></li>
+				<li><a href="runGuest.jsp">출연자 소개</a></li>
+				<li><a href="#">공지사항</a></li>
+				<li><a href="bbs.jsp">시청자 게시판</a></li>
+				<li class="dropdown"></li>
+			</ul>
+
+
+			<%
+			if (userID == null) { /* 로그인이 안된사람이 보는 화면 */
+			%>
+
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="login.jsp">로그인</a></li>
+				<li><a href="join.jsp">회원가입</a></li>
+			</ul>
+		</div>
+		<!-- /.navbar-collapse -->
+	</div>
+	<!-- /.container-fluid -->
+</nav>
+
+<%
+} else { /* 로그인이 된사람이 보는 화면 */
+%>
+
+<ul class="nav navbar-nav navbar-right">
+	<li class="dropdown">
+                <li><a href="#">회원관리</a></li>
+                <li><a href="logoutAction.jsp">로그아웃</a></li>
+	</li>
+</ul>
+</div>
+<!-- /.navbar-collapse -->
+</div>
+<!-- /.container-fluid -->
+</nav>
+
+<%
+>>>>>>> Stashed changes
 }
 %>
 
