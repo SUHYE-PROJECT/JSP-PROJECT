@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="/commonIncludeTop.jsp"%>
-<%@ include file="session.jsp" %> 
 
 <br>
 <!-- 바퀴달린집 text logo -->
@@ -36,23 +35,13 @@
 
         </li>
       </ul>
-    <% 
-        if(userID == null) {
-    %>
+
       <ul class="nav navbar-nav navbar-right">
         <li><a href="login.jsp">로그인</a></li>
         <li><a href="join.jsp">회원가입</a></li>
+
+        </li>
       </ul>
-    <%
-        } else {
-    %>         
-     <ul class="nav navbar-nav navbar-right">
-      <li><a href="logoutAction.jsp">로그아웃</a></li>
-      <li><a href="join.jsp">회원가입</a></li>
-      </ul>
-    <%
-        }
-    %>   
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
