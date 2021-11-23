@@ -6,7 +6,7 @@
 <jsp:useBean id = "bbs" class="bbs.Bbs" scope="page" />
 <jsp:setProperty name ="bbs" property="boardTitle" />
 <jsp:setProperty name ="bbs" property="boardContent" />
-    
+<jsp:setProperty name ="bbs" property="boardType" />
     
 <!DOCTYPE html>
 <html>
@@ -32,7 +32,8 @@
                         script.println("</script>");
             }else{  //제목과 내용이 정상 입력되었다면
                  BbsDAO bbsDAO = new BbsDAO();
-                 int result = bbsDAO.write(bbs.getBoardTitle(), userID, bbs.getBoardContent());   //글쓰기 로직 실행
+                
+                 int result = bbsDAO.write(bbs.getBoardTitle(), userID, bbs.getBoardContent(), bbs.getBoardType() );   //글쓰기 로직 실행
                  
                  if(result == -1){      //데이터베이스 오류
                      PrintWriter script = response.getWriter();

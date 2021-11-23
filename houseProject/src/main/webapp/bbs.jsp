@@ -44,7 +44,7 @@
                 <thead>
                     <tr>
                         <th style="backgroud-color: #eeeeee; text-align:center;">번호</th>
-                        <th style="backgroud-color: #eeeeee; text-align:center;">유형</th>
+                        <!-- <th style="backgroud-color: #eeeeee; text-align:center;">유형</th> -->
                         <th style="backgroud-color: #eeeeee; text-align:center;">제목</th>
                         <th style="backgroud-color: #eeeeee; text-align:center;">작성자</th>
                         <th style="backgroud-color: #eeeeee; text-align:center;">작성일</th>
@@ -55,12 +55,12 @@
                 <!-- 글 리스트 동적 처리 -->
                 <c:forEach var="board" items="${list}" varStatus="status">
                     <tr>
-                       <td class="col-md-1">${board.bbsID}</td>
-                       <td class="col-md-5"><a href="view.jsp?bbsID=${board.bbsID}"> <c:out value ="${board.bbsTitle}" escapeXml="true"></c:out></a></td><!-- 특수문자나 공백, 줄띄움 처리 --> 
-                       <td class="col-md-2">${board.userID}</td> 
+                       <td class="col-md-1">${board.boardID}</td>
+                       <td class="col-md-5"><a href="view.jsp?bbsID=${board.boardID}"> <c:out value ="${board.boardTitle}" escapeXml="true"></c:out></a></td><!-- 특수문자나 공백, 줄띄움 처리 --> 
+                       <td class="col-md-2">${board.createrID}</td> 
                 
                        <!-- db에는 datetime이지만 자바객체에선 String 이기때문에 먼저 parseDate를 통해 date형태로 값을 파싱후에 formatDate사용 -->
-                       <fmt:parseDate value="${board.bbsDate}" var="parseDateValue" pattern ="yyyy-MM-dd HH:ss"></fmt:parseDate>
+                       <fmt:parseDate value="${board.createDate}" var="parseDateValue" pattern ="yyyy-MM-dd HH:ss"></fmt:parseDate>
                        <td class="col-md-2"><fmt:formatDate value="${parseDateValue}" pattern="yyyy.MM.dd  HH:ss"/></td>
                        <td class="col-md-1">${board.viewCount}</td>
                     </tr>

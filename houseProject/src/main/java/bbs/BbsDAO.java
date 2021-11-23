@@ -40,6 +40,7 @@ public class BbsDAO {
 	// 다음글의 번호 가져오기
 	public int getNext() {
 		String SQL = "SELECT boardID FROM board ORDER BY boardID DESC"; // 내림차순이기 때문에 마지막글에 쓴글이 제일 위에 뜸
+
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
 			rs = pstmt.executeQuery();
@@ -54,8 +55,8 @@ public class BbsDAO {
 	}
 
 	// 글쓰기
-	public int write(String boardTitle, String createrID, String boardContent) {
-		String SQL = "INSERT INTO board (boardID, boardTitle, createrID, createDate, boardContent, boardAvailable) VALUES (?,?,?,?,?,?)";
+	public int write(String boardTitle, String createrID, String boardContent, int boardType) {
+		String SQL = "INSERT INTO board (boardID, boardTitle, createrID, createDate, boardContent, boardAvailable, viewCount, boardType) VALUES (?,?,?,?,?,?,?,?)";
 		try {
 			System.out.println("글쓰기");
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
@@ -65,6 +66,8 @@ public class BbsDAO {
 			pstmt.setString(4, getDate());
 			pstmt.setString(5, boardContent);
 			pstmt.setInt(6, 1); // available. 첫글을 썼을땐 true
+			pstmt.setInt(7, 0);
+			pstmt.setInt(8, boardType);
 			return pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();

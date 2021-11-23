@@ -16,6 +16,7 @@
         <div class="container">
         <div class="row">
             <form method="post" action="writeAction.jsp" >
+                <input type="hidden" name="boardType" value=1>
                <table class="table table-striped" style="text-align:center; border:1px solid #dddddd">
                    <thead>
                        <tr>
