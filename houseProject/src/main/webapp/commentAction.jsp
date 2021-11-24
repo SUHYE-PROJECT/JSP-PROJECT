@@ -11,6 +11,7 @@
     <jsp:setProperty name ="comment" property="boardID" />
     <jsp:setProperty name ="comment" property="comNum" />
     <jsp:setProperty name ="comment" property="createdCom" />
+    <jsp:setProperty name ="comment" property="createDate" />
     
 <!DOCTYPE html>
 <html>
@@ -20,30 +21,31 @@
 </head>
 <body>
     
-    글번호 ${comment.bbsID}<br>
-    댓글번호 ${comment.commentID}<br> 
-    글내용 ${comment.commentText}
-
+<%--     테스트 출력444
+    글번호 ${comment.boardID}<br>
+    댓글번호 ${comment.comNum}<br> 
+    글내용 ${comment.createdCom}
+ --%>
     
     <%@ include file="session.jsp" %><!-- 정적포함 -->
     
     <%
         /* 자바단 사용할 변수 선언 */
         request.setCharacterEncoding("UTF-8");
-        int bbsID = comment.getBoardID();
-        int commentID = comment.getComNum();
-        String commentText = comment.getCreatedCom();
+        int boardID = comment.getBoardID();
+        int comNum = comment.getComNum();
+        String createdCom = comment.getCreatedCom();
         String type = request.getParameter("type");
  
         
         /* 빈이 널이 아니면 값 대입 */
         if(comment !=null){
-            int boardID = comment.getBoardID();
-            int comNum = comment.getComNum();
-            String createdCom = comment.getCreatedCom();
+            boardID = comment.getBoardID();
+            comNum = comment.getComNum();
+            createdCom = comment.getCreatedCom();
         }
 
-        if(createrID ==null){  //로그인이 되어있는사람만 댓글을 쓸수있어야 한다.        
+        if(userID ==null){  //로그인이 되어있는사람만 댓글을 쓸수있어야 한다.        
             PrintWriter script = response.getWriter();
             script.println("<script>");
             script.println("alert('로그인을 하세요')");
@@ -74,7 +76,7 @@
                     }
                     else {             //댓글쓰기 정상 실행
                         PrintWriter script = response.getWriter();
-                        String url = "view.jsp?bbsID="+comment.getBoardID();
+                        String url = "view.jsp?boardID="+comment.getBoardID();
                         script.println("<script>");
                         script.println("location.href = "+"'"+url+"'");
                         script.println("</script>");
@@ -86,7 +88,7 @@
             case "update":{
                 PrintWriter script = response.getWriter();
                 int result = commentDAO.update(boardID, comNum, createdCom);
-                String url = "view.jsp?bbsID="+boardID;
+                String url = "view.jsp?boardID="+boardID;
                  script.println("<script>");
                 script.println("location.href = "+"'"+url+"'");
                 script.println("</script>");
@@ -96,7 +98,7 @@
                 //댓글 삭제 로직 수행
                 PrintWriter script = response.getWriter();
                 int result = commentDAO.delete(boardID, comNum); 
-                String url = "view.jsp?bbsID="+boardID;
+                String url = "view.jsp?boardID="+boardID;
                 script.println("<script>");
                 script.println("location.href = "+"'"+url+"'");
                 script.println("</script>");

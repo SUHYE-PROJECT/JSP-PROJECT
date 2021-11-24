@@ -5,6 +5,8 @@
 <%@ page import="java.io.PrintWriter" %>
 <% request.setCharacterEncoding("UTF-8"); %>
 
+
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,7 +25,7 @@
         } 
         
         int boardID = 0;
-        if(request.getParameter("boradID")!=null){
+        if(request.getParameter("boardID")!=null){
             boardID = Integer.parseInt(request.getParameter("boardID"));
         }
         if(boardID == 0){
@@ -67,7 +69,8 @@
                      }
                 }
         }
-     %>   
+    
 
+    %>
 </body>
 </html>

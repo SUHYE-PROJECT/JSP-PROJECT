@@ -22,11 +22,11 @@
         script.println("location.href = 'login.jsp'");  
         script.println("</script>");
     }
-    int bbsID = 0;
+    int boardID = 0;
     if(request.getParameter("boardID")!=null){
-        bbsID = Integer.parseInt(request.getParameter("boardID"));
+        boardID = Integer.parseInt(request.getParameter("boardID"));
     }
-    if(bbsID == 0){
+    if(boardID == 0){
         PrintWriter script = response.getWriter();
         script.println("<script>");
         script.println("alert('유효하지 않은 글입니다.')");  
@@ -47,7 +47,7 @@
         <!-- 게시판 글쓰기 화면 -->
     <div class="container">
         <div class="row">
-            <form method="post" action="updateAction.jsp?bbsID=<%= boardID %>" >
+            <form method="post" action="updateAction.jsp?boardID=<%= boardID %>" >
                <table class="table table-striped" style="text-align:center; border:1px solid #dddddd">
                    <thead>
                        <tr>
