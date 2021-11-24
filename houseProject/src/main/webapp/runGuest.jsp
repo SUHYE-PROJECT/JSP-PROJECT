@@ -16,41 +16,135 @@
 <!-- body -->
 <body>
 
-	<!-- 내비게이션 -->
-	<jsp:include page="nav.jsp" />
+    <!-- 내비게이션 -->
+    <jsp:include page="nav.jsp" />
 
-	<!-- 런닝맨 소개 -->
-        <div class="container">
+    <!-- 런닝맨 소개 -->
+    <div class="container">
         <table>
-        <tr>
-        <td><img alt="" src="imgs/runGuest1.jpg"></td>
-        <td>
-        <table>
-        <tr>
-        <td>별명 : 변치 않는 예능 까불이</td>        
-        </tr>
-                <tr>
-        <td><br>런닝맨의 자존심.
-<br>본인은 아니라는데도 멤버들이 인정하는 런닝맨 외모 서열 1위.
-<br>웃음이면 웃음, 추리면 추리, 스피드면 스피드.
-<br>다른 멤버들의 부러움을 사는 진짜 능력자이자
-<br>런닝맨의 공식 장난꾸러기. 그리고 유르스윌리스.</td>        
-        </tr>
-        
-        </table>
-        </td>
-        
-        </tr>
-        
-        
-        </table>
-        
-        </div>
-	<!-- 런닝맨 소개 끝 -->
+        <!-- 유재석 -->
+            <tr>
+                <td><img alt="" src="imgs/runGuest1.jpg"></td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>별명 : 변치 않는 예능 까불이</td>
+                        </tr>
+                        <tr>
+                            <td><br>런닝맨의 자존심. <br>본인은 아니라는데도 멤버들이 인정하는 런닝맨 외모 서열 1위. <br>웃음이면 웃음, 추리면 추리, 스피드면 스피드. <br>다른 멤버들의 부러움을 사는 진짜 능력자이자 <br>런닝맨의
+                                공식 장난꾸러기. 그리고 유르스윌리스.</td>
+                        </tr>
 
-	<br>
+                    </table>
+                </td>
+            </tr>
+            
+                 <!-- 지석진 -->
+            <tr>
+                <td><img alt="" src="imgs/runGuest2.jpg"></td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>별명 : 변치 않는 예능 까불이</td>
+                        </tr>
+                        <tr>
+                            <td><br>런닝맨의 자존심. <br>본인은 아니라는데도 멤버들이 인정하는 런닝맨 외모 서열 1위. <br>웃음이면 웃음, 추리면 추리, 스피드면 스피드. <br>다른 멤버들의 부러움을 사는 진짜 능력자이자 <br>런닝맨의
+                                공식 장난꾸러기. 그리고 유르스윌리스.</td>
+                        </tr>
 
-	<jsp:include page="footer.jsp" />
-	<%@ include file="/commonIncludeBottom.jsp"%>
+                    </table>
+                </td>
+            </tr>
+                    <!-- 김종국 -->
+            <tr>
+                <td><img alt="" src="imgs/runGuest3.jpg"></td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>별명 : 변치 않는 예능 까불이</td>
+                        </tr>
+                        <tr>
+                            <td><br>런닝맨의 자존심. <br>본인은 아니라는데도 멤버들이 인정하는 런닝맨 외모 서열 1위. <br>웃음이면 웃음, 추리면 추리, 스피드면 스피드. <br>다른 멤버들의 부러움을 사는 진짜 능력자이자 <br>런닝맨의
+                                공식 장난꾸러기. 그리고 유르스윌리스.</td>
+                        </tr>
+
+                    </table>
+                </td>
+            </tr>
+                    <!-- 하하 -->
+            <tr>
+                <td><img alt="" src="imgs/runGuest4.jpg"></td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>별명 : 변치 않는 예능 까불이</td>
+                        </tr>
+                        <tr>
+                            <td><br>런닝맨의 자존심. <br>본인은 아니라는데도 멤버들이 인정하는 런닝맨 외모 서열 1위. <br>웃음이면 웃음, 추리면 추리, 스피드면 스피드. <br>다른 멤버들의 부러움을 사는 진짜 능력자이자 <br>런닝맨의
+                                공식 장난꾸러기. 그리고 유르스윌리스.</td>
+                        </tr>
+
+                    </table>
+                </td>
+            </tr>
+                    <!-- 송지효 -->
+            <tr>
+                <td><img alt="" src="imgs/runGuest5.jpg"></td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>별명 : 변치 않는 예능 까불이</td>
+                        </tr>
+                        <tr>
+                            <td><br>런닝맨의 자존심. <br>본인은 아니라는데도 멤버들이 인정하는 런닝맨 외모 서열 1위. <br>웃음이면 웃음, 추리면 추리, 스피드면 스피드. <br>다른 멤버들의 부러움을 사는 진짜 능력자이자 <br>런닝맨의
+                                공식 장난꾸러기. 그리고 유르스윌리스.</td>
+                        </tr>
+
+                    </table>
+                </td>
+            </tr>
+                    <!-- 전소민 -->
+            <tr>
+                <td><img alt="" src="imgs/runGuest6.jpg"></td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>별명 : 변치 않는 예능 까불이</td>
+                        </tr>
+                        <tr>
+                            <td><br>런닝맨의 자존심. <br>본인은 아니라는데도 멤버들이 인정하는 런닝맨 외모 서열 1위. <br>웃음이면 웃음, 추리면 추리, 스피드면 스피드. <br>다른 멤버들의 부러움을 사는 진짜 능력자이자 <br>런닝맨의
+                                공식 장난꾸러기. 그리고 유르스윌리스.</td>
+                        </tr>
+
+                    </table>
+                </td>
+            </tr>
+                    <!-- 양세찬 -->
+            <tr>
+                <td><img alt="" src="imgs/runGuest7.jpg"></td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>별명 : 변치 않는 예능 까불이</td>
+                        </tr>
+                        <tr>
+                            <td><br>런닝맨의 자존심. <br>본인은 아니라는데도 멤버들이 인정하는 런닝맨 외모 서열 1위. <br>웃음이면 웃음, 추리면 추리, 스피드면 스피드. <br>다른 멤버들의 부러움을 사는 진짜 능력자이자 <br>런닝맨의
+                                공식 장난꾸러기. 그리고 유르스윌리스.</td>
+                        </tr>
+
+                    </table>
+                </td>
+            </tr>
+
+
+        </table>
+
+    </div>
+    <!-- 런닝맨 소개 끝 -->
+
+    <br>
+
+    <jsp:include page="footer.jsp" />
+    <%@ include file="/commonIncludeBottom.jsp"%>
 </body>
 </html>
