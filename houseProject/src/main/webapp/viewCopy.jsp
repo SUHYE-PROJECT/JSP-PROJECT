@@ -119,9 +119,8 @@
 
 						<td class="col-md-8"><textarea id="createdCom" style="height: 50px;" class="form-control" placeholder="댓글을 입력해주세요." name="createdCom"></textarea></td>
 						<!-- 제출버튼 -->
-						<td class="col-md-3 align-middle"><input type="button" id="createdComResetButton" class="btn btn-dark" value="새로고침"
-							onclick="resetCreatedCom();" /></input> 
-							<input type="submit" id="createdComUpdateButton" class="btn btn-info" value="입력" ></input></td>
+						<td class="col-md-3 align-middle"><input type="button" id="createdComResetButton" class="btn btn-dark" value="초기화"
+							onclick="resetCreatedCom();" /></input> <input type="submit" id="createdComUpdateButton" class="btn btn-info"></input></td>
 					</tr>
 				</table>
 			</form>
@@ -161,13 +160,9 @@
 						if (userID.equals(list.get(i).getCreaterID())) { //댓글 작성자와 로그인유저가 같으면 수정,삭제 버튼 표시
 						%>
 						<td class="col-md-1 ">
-							<!-- 댓글수정버튼 --> 
-							<button onclick="updateComment(<%=list.get(i).getBoardID()%>, <%=list.get(i).getComNum()%>);">수정</button>
-							
-							 <!-- 댓글삭제버튼 --> 
-							 <button onclick="confirmDelete(<%=list.get(i).getBoardID()%>, <%=list.get(i).getComNum()%>);">삭제</button>
-							 
-
+							<!-- 댓글수정버튼 --> <img class="modifyBtn" src="images/yellow_modify.png" alt=""
+							onclick="updateComment(<%=list.get(i).getBoardID()%>, <%=list.get(i).getComNum()%>);" /> <!-- 댓글삭제버튼 --> <img class="minusBtn"
+							src="images/red_minus.png" alt="" onclick="confirmDelete(<%=list.get(i).getBoardID()%>, <%=list.get(i).getComNum()%>);" />
 						</td>
 
 						<%
@@ -208,7 +203,7 @@
 
             writer = $(this).find("td:eq(0)").text();
             createdCom = $(this).find("td:eq(1)").text();
-            writedDate = $(this).find("td:eq(2)").text();
+            createDate = $(this).find("td:eq(2)").text();
             
 
             comNum = $("#comNum").val(comNum);
