@@ -106,15 +106,15 @@
             <form method="post" action="commentAction.jsp" id="commentForm">
                 <!-- 댓글번호commentID는 dao에서 증가시킬거고, 글내용은 아래, 글작성자는 세션에서 -->
                 <input id="actionTypeInput" type="hidden" name = "type" value="create">
-                <input type="hidden" id="bbsID" name = "bbsID" value="<%=bbs.getBoardID() %>">
-                <input type="hidden" id="commentID" name = "commentID" value=0>
+                <input type="hidden" id="boardID" name = "boardID" value="<%=bbs.getBoardID() %>">
+                <input type="hidden" id="comNum" name = "comNum" value=0>
                 <table class="table table-striped" style="text-align: center; border: 2px solid #dddddd; height: 70px;">
                     <tr>
-                        <td class="col-md-1 align-middle"><%= userID %></td>
-                        <td class="col-md-8"><textarea id = "commentText" style="height:50px;" class="form-control" placeholder="댓글을 입력해주세요." name="commentText"></textarea></td>
+                        <td class="col-md-1 align-middle"><%= createrID %></td>
+                        <td class="col-md-8"><textarea id = "createdCom" style="height:50px;" class="form-control" placeholder="댓글을 입력해주세요." name="commentText"></textarea></td>
                         <!-- 제출버튼 -->
                         <td class="col-md-3 align-middle">
-                           <input type="button" id="commentTextResetButton" class="btn btn-dark" value="초기화" onclick = "resetCommentText();"/></input>
+                           <input type="button" id="commentTextResetButton" class="btn btn-dark" value="초기화" onclick = "resetCreatedCom();"/></input>
                            <input type="submit" id="commentTextUpdateButton" class="btn btn-info"></input>
                         </td>
                     </tr>
@@ -253,7 +253,7 @@
     
     
     
-    function resetCommentText(){
+    function resetCreatedCom(){
         $("#commentText").val("");//reset은 왜안되나 모르겠고 이걸로 해결
         
     }
