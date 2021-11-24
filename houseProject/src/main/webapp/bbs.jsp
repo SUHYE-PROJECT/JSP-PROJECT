@@ -56,7 +56,7 @@
                 <c:forEach var="board" items="${list}" varStatus="status">
                     <tr>
                        <td class="col-md-1">${board.boardID}</td>
-                       <td class="col-md-5"><a href="view.jsp?bbsID=${board.boardID}"> <c:out value ="${board.boardTitle}" escapeXml="true"></c:out></a></td><!-- 특수문자나 공백, 줄띄움 처리 --> 
+                       <td class="col-md-5"><a href="view.jsp?boardID=${board.boardID}"> <c:out value ="${board.boardTitle}" escapeXml="true"></c:out></a></td><!-- 특수문자나 공백, 줄띄움 처리 --> 
                        <td class="col-md-2">${board.createrID}</td> 
                 
                        <!-- db에는 datetime이지만 자바객체에선 String 이기때문에 먼저 parseDate를 통해 date형태로 값을 파싱후에 formatDate사용 -->
