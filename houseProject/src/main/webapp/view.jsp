@@ -184,14 +184,14 @@
     let writer = null;
     let contentText = null;
     let writedDate = null;
-    let bbsID = null;
-    let commentID = null;
+    let boardID = null;
+    let comNum = null;
     
     
 
     
     //댓글수정 버튼 눌렀을때 호출. 해당댓글의 정보 가져옴
-    function updateComment(bbsID, commentID){
+    function updateComment(boardID, comNum){
         //클릭한 행의 3개 컬럼 정보 변수에 저장
         $("#commentTable tbody").on("click", "tr", function(){
 
@@ -200,9 +200,9 @@
             writedDate = $(this).find("td:eq(2)").text();
             
 
-            commentID = $("#commentID").val(commentID);
+            commentID = $("#comNum").val(comNum);
             
-            console.log(commentID);
+            console.log(comNum);
             console.log(contentText);
             $("#commentText").val(contentText);
             $("#commentTextUpdateButton").attr('class','btn btn-warning');
@@ -213,11 +213,11 @@
     
     
     // 댓글 삭제. 안전을 위해서 post방식으로 구현
-    function deleteComment(bbsID, commentID){
+    function deleteComment(boardID, comNum){
         let url = 'commentAction.jsp';
         let params = {
-                "bbsID" : bbsID,
-                "commentID" : commentID,
+                "boardID" : boardID,
+                "comNum" : comNum,
                 "type" : 'delete'
         }
         
@@ -238,33 +238,13 @@
         form.submit();
         
 
-/*          $.ajax(
-            { type: "POST",
-              url: "commentAction.jsp",
-              data: { //전달할 변수와 값
-                  type : "delete",
-                  bbsID : bbsID,
-                  commentID : commentID
-              },
-              
-              success: function(data) {   //정상 실행시 콜백함수
-                    alert("success!");
-              },
-              error: function(error) {    //비정상 실행시 콜백함수
-                    alert("Error!");
-              },
-
-              dataType: 'json'    //응답결과의 데이터형식
-            }
-        );  */
-    }
     
 
     // 댓글 삭제 버튼 눌렀을때 작동. 댓글 삭제한다는 경고창
-    function confirmDelete(bbsID, commentID){
+    function confirmDelete(boardID, comNum){
         let msg = confirm("해당 댓글을 삭제하시겠습니까?");
         if(msg == true){
-            deleteComment(bbsID, commentID);
+            deleteComment(boardID, comNum);
         }
         else{
             return false; //삭제 취소

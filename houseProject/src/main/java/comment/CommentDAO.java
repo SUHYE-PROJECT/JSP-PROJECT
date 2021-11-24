@@ -54,16 +54,16 @@ public class CommentDAO {
     }
 
     // 댓글 쓰기
-    public int write(String comNum, String boardID, String createdCom) {
+    public int write(int boardID, String createrID, String createdCom) {
         String SQL = "INSERT INTO COMMENT VALUES (?,?,?,?,?)";
         try {
             System.out.println("댓글 쓰기");
             PreparedStatement pstmt = conn.prepareStatement(SQL);
             pstmt.setInt(1, getNext());
-            pstmt.setString(2, boardID);
-            pstmt.setString(3, createdCom);
-            pstmt.setString(4, createrID);
-            pstmt.setString(5, getDate());
+            pstmt.setInt(2, boardID);
+            pstmt.setString(3, createrID);
+            pstmt.setString(4, getDate());
+            pstmt.setString(5, createdCom);
             return pstmt.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
