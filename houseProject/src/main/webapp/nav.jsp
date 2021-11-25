@@ -53,7 +53,7 @@
 
 <ul class="nav navbar-nav navbar-right">
     <li class="dropdown">
-                <li><a href="#">회원관리</a></li>
+                <li><a href="#">회원정보</a></li>
                 <li><a href="logoutAction.jsp">로그아웃</a></li>
     </li>
 </ul>

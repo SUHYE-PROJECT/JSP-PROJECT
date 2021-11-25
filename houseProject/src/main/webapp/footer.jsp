@@ -3,7 +3,7 @@
 <!-- 푸터 시작 : https://mdbootstrap.com/docs/standard/navigation/footer/-->
 <footer class="bg-light text-center text-lg-start">
 <div class="footer">
-  <p>© 2021 Copyright: 바퀴달린집</p>
+  <p>© 2021 Copyright: 런닝맨</p>
 </div>
 </footer>
 
